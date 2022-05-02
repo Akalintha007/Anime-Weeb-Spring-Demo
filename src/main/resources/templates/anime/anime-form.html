@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          th:href="@{/css/style1.css}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Add Anime Page</title>
+</head>
+
+<body>
+
+<div class="container-fluid add-con">
+
+    <div  class=" d-flex flex-row justify-content-left head-title-container">
+        <div>
+            <img class="head-title"src="https://i.ibb.co/Gkc4xnz/logo-final-1.png">
+        </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a th:href="@{/anime-weeb/admin/anime-list}" id="about">Home<span class="icons-home"><i class="fa fa-home" style="font-size:45px;color:white"></i></span>   </a>
+    </div>
+
+    <div class="cont-updt">
+        <div >
+            <form action="#" th:action="@{/anime-weeb/admin/save-a}"
+                  th:object="${anime1}" method="POST">
+
+                <!-- Add hidden form field to handle update -->
+                <input type="hidden" th:field="*{id}" />
+
+                <div class=" d-flex flex-column">
+                    <label class="label">Anime Name</label>
+                    <input  type="text" th:field="*{animeName}"
+                            class="input-field mb-4 col-4" placeholder="Anime Name">
+
+                    <!-- Add error message (if present) -->
+                    <span th:if="${#fields.hasErrors('animeName')}"
+                          th:errors="*{animeName}"
+                          class="badge badge-danger ml-5 mb-4 col-3"></span>
+
+                </div>
+
+                <div class="d-flex flex-column">
+                    <label class="label">Rating</label>
+                    <input input-field type="text" th:field="*{rating}"
+                           class=" mb-4 col-4 input-field" placeholder="Rating">
+
+                    <!-- Add error message (if present) -->
+                    <span th:if="${#fields.hasErrors('rating')}"
+                          th:errors="*{rating}"
+                          class="badge badge-danger ml-5 mb-4 col-3"></span>
+
+                </div>
+
+                <div class=" d-flex flex-column">
+                    <label class="label">Description</label>
+
+                    <input type="text" th:field="*{description}"
+                           class="input-field mb-4 col-4" placeholder="Description">
+
+                    <!-- Add error message (if present) -->
+                    <span th:if="${#fields.hasErrors('description')}"
+                          th:errors="*{description}"
+                          class="badge badge-danger ml-5 mb-4 col-3"></span>
+
+                </div>
+
+                <div class=" d-flex flex-column">
+                    <label class="label">Image URL</label>
+
+                    <input type="text" th:field="*{displayImg}"
+                           class="input-field mb-4 col-4" placeholder="Image URL">
+
+                    <!-- Add error message (if present) -->
+                    <span th:if="${#fields.hasErrors('displayImg')}"
+                          th:errors="*{displayImg}"
+                          class="badge badge-danger ml-5 mb-4 col-3"></span>
+
+                </div>
+
+                <div class=" d-flex flex-column">
+
+
+                    <input type="hidden" th:field="*{watchListId}"
+                           class="input-field mb-4 col-4" placeholder="Watch list Id">
+
+                    <!-- Add error message (if present) -->
+                    <span th:if="${#fields.hasErrors('displayImg')}"
+                          th:errors="*{displayImg}"
+                          class="badge badge-danger ml-5 mb-4 col-3"></span>
+
+                </div>
+
+                <div class="btn-save mt-4">
+                    <button type="submit" class="save-button col-2">Save</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+

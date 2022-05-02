@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet"
+        th:href="@{/css/style1.css}" />
+    <link href='https://css.gg/log-out.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <title>Anime Home Page</title>
+</head>
+
+<body>
+<!-- The sidebar -->
+  <div class="container-fluid main-con">
+
+      <div  class=" d-flex flex-row justify-content-left head-title-container">
+        <div>
+          <img class="head-title"src="https://i.ibb.co/Gkc4xnz/logo-final-1.png">
+        </div>
+      </div>
+      <div id="mySidenav" class="sidenav">
+        <a th:href="@{/anime-weeb/admin/admin-user}" id="about">Home<span class="icons-home"><i class="fa fa-home" style="font-size:45px;color:white"></i></span>   </a>
+        <a th:href="@{/anime-weeb/admin/showFormForAdd}" id="blog">Add<span class="icons-add"><i class="fa fa-plus" style="font-size:45px;color:white"></i></span></a>
+        <a th:href="@{/anime-weeb/admin/kill-code}" id="projects">Update<span class="icons-update"><i class="fa fa-edit" style="font-size:45px;color:white"></i></span></a>
+        <a th:href="@{/anime-weeb/admin/kill-code}" id="contact">Delete<span class="icons-delete"><i class="fa fa-trash-o" style="font-size:45px;color:white"></i></span></a>
+        <a th:href="@{/anime-weeb/admin/watch-list}" id="w-list">W-List<span class="icons-list"><i class="fa fa-star-o" style="font-size:45px;color:white"></i></span></a>
+        <form  name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+          <input type="submit" value = "Logout"/>
+        </form>
+          <a href="javascript: logoutForm.submit();" id="logout">Logout <span class="icons-logout"><i class="fa fa-sign-out" style="font-size:45px;color:white"></i></span></a>
+      </div>
+
+
+
+      <div class="content">
+
+
+
+        <br><br>
+
+        <div th:each="tempAnime : ${anime}" class="container d-flex flex-row justify-content-left">
+          <div  class=" d-flex flex-row anime-card shadow p-3 mb-3">
+            <div>
+              <img th:src="${tempAnime.displayImg}"  class="image-holder"/>
+              <h1  th:text="${tempAnime.animeName}" class="card-title"></h1>
+
+
+              <a th:href="@{/anime-weeb/admin/animeGenre(animeId=${tempAnime.id})}" class="more-link" >
+                More
+                <svg width="17px" height="17px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#F2F4F4" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                </svg>
+              </a>
+            </div>
+            <div class="p-2 ml-3 desc">
+              <h1 class="rating"> Rating:<span th:text="${tempAnime.rating}"></span></h1>
+              <p class="description"><span th:text="${tempAnime.description}"></span>There once lived a pirate named Gol D. Roger. He obtained wealth, fame, and power to earn the title of Pirate King. When he was captured and about to be executed, he revealed that his treasure
+                called One Piece was hidden somewhere at the Grand Line. This made all people set out to search and uncover the One Piece treasure, but no one
+                ever found the location of Gol D. Roger's treasure, and the Grand Line was too dangerous a place to overcome. Twenty-two years after Gol
+                D. Roger's death, a boy named Monkey D. Luffy decided to become a pirate and search for Gol D. Roger's treasure to become the next Pirate King.a style
+                of animation originating in Japan that is characterized by stark colorful graphics depicting vibrant characters in action-filled plots often with fantastic
+                or futuristic themes.</p>
+              <div class="btns-u-d">
+                        <a th:href="@{/anime-weeb/admin/showFormForUpdate(animeId=${tempAnime.id})}"
+                           class="btn btn-dark btn-m "
+                           id="updt" >
+                          Update
+                        </a>
+                        <a th:href="@{/anime-weeb/admin/delete(animeId=${tempAnime.id},watchListId=${tempAnime.watchListId})}"
+                           class="btn btn-danger btn-m "
+                           id="dlt"
+                           onclick="if (!(confirm('Are you sure you want to delete ?'))) return false">
+                          Delete
+                        </a>
+                        <a th:href="@{/anime-weeb/admin/add-to-watch-list(watchListId=${tempAnime.watchListId})}"
+                           class="btn btn-primary btn-m panel-1"
+                           id="addToWatchList"
+                           onclick="if (!(confirm('Are you sure you want to add this anime to your watch list ?'))) return false">
+                          Add to watch list
+                        </a>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

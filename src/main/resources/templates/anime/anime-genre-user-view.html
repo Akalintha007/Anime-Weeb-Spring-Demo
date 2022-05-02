@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          th:href="@{/css/style1.css}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Anime Home Page</title>
+</head>
+
+<body>
+<!-- The sidebar -->
+<div >
+    <div  class=" d-flex flex-row justify-content-left head-title-container">
+        <div>
+            <img class="head-title"src="https://i.ibb.co/Gkc4xnz/logo-final-1.png">
+        </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a th:href="@{/anime-weeb/user/anime-list}" id="about">Home<span class="icons-home"><i class="fa fa-home" style="font-size:45px;color:white"></i></span>   </a>
+
+    </div>
+
+
+    <div class="container-fluid main-con2">
+        <div  th:object="${animeg}" method="GET" class="container d-flex flex-row justify-content-left">
+            <div  class=" d-flex flex-row anime-card shadow p-3 mb-3">
+                <div>
+                    <img th:src="${animeg.displayImg}" src="https://i.ibb.co/vxbdzXZ/Demon-Slayer.jpg" class="image-holder2"/>
+
+                    <div>
+                        <h1 class="genre-head">Genre:</h1>
+
+                        <div th:each="tempGenre : ${animeg.genres}" class="container d-flex flex-column justify-content-left">
+                            <span th:text="${tempGenre.genre}" class="genre-box"></span>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="p-2 ml-3 desc">
+                    <h1  th:text="${animeg.animeName}" class="card-title2"></h1>
+                    <p class="description"><span th:text="${animeg.description}"></span>There once lived a pirate named Gol D. Roger. He obtained wealth, fame, and power to earn the title of Pirate King. When he was captured and about to be executed, he revealed that his treasure
+                        called One Piece was hidden somewhere at the Grand Line. This made all people set out to search and uncover the One Piece treasure, but no one
+                        ever found the location of Gol D. Roger's treasure, and the Grand Line was too dangerous a place to overcome. Twenty-two years after Gol
+                        D. Roger's death, a boy named Monkey D. Luffy decided to become a pirate and search for Gol D. Roger's treasure to become the next Pirate King.a style
+                        of animation originating in Japan that is characterized by stark colorful graphics depicting vibrant characters in action-filled plots often with fantastic
+                        or futuristic themes. There once lived a pirate named Gol D. Roger. He obtained wealth, fame, and power to earn the title of Pirate King. When he was captured and about to be executed, he revealed that his treasure
+                        called One Piece was hidden somewhere at the Grand Line. This made all people set out to search and uncover the One Piece treasure, but no one
+                        ever found the location of Gol D. Roger's treasure, and the Grand Line was too dangerous a place to overcome. Twenty-two years after Gol
+                        D. Roger's death, a boy named Monkey D. Luffy decided to become a pirate and search for Gol D. Roger's treasure to become the next Pirate King.a style
+                        of animation originating in Japan that is characterized by stark colorful graphics depicting vibrant characters in action-filled plots often with fantastic
+                        or futuristic themes.</p>
+                    <div class="details">
+
+                        <div class="d-flex flex-row ">
+                            <div class="other-details">
+                                <h1 class="rating2"> Rating:<span class="values" th:text="${animeg.rating}"></span></h1>
+                            </div>
+                            <div class="other-details">
+                                <h1 class="rating2"> Release Year:<span class="values">2022</span></h1>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row ">
+                            <div class="other-details">
+                                <h1 class="rating2"> Type: <span class="values">TV Series</span></h1>
+                            </div>
+                            <div class="other-details">
+                                <h1 class="rating2"> Duration:<span class="values">24 min/ep</span> </h1>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row ">
+                            <div class="other-details">
+                                <h1 class="rating2"> Premiered: <span class="values">Winter</span></h1>
+                            </div>
+                            <div class="other-details">
+                                <h1 class="rating2"> Quality:<span class="values">HD</span> </h1>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row ">
+                            <div class="other-details">
+                                <h1 class="rating2"> Status: <span class="values">Currently Airing</span></h1>
+                            </div>
+                            <div class="other-details">
+                                <h1 class="rating2"> Views:<span class="values">5,738,364</span> </h1>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row ">
+                            <div class="other-details">
+                                <h1 class="rating2"> Studios: <span class="values">Toei Animation</span></h1>
+                            </div>
+                            <div class="other-details">
+                                <h1 class="rating2"> Scores:<span class="values">786</span> </h1>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

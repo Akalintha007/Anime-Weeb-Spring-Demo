@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet"
+              th:href="@{/css/login-style.css}" />
+
+
+
+
+
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+        <title>Login/Singup Page</title>
+    </head>
+    <body>
+        <div  class=" d-flex flex-row justify-content-left head-title-container">
+            <div>
+                <img class="head-title"src="https://i.ibb.co/Gkc4xnz/logo-final-1.png">
+            </div>
+        </div>
+        <div class="main-con2">
+            <br>
+            <br>
+            <div class="cont">
+                <div class="form sign-in ">
+                    <h2>Welcome</h2>
+<!--                    <div class="d-flex flex-column login-1">-->
+<!--                        <div>-->
+<!--                            <label>-->
+<!--                                <span>User Name</span>-->
+<!--                                <input type="text" />-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                        <div>-->
+<!--                            <label>-->
+<!--                                <span>Password</span>-->
+<!--                                <input type="password" />-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                        <div>-->
+<!--                            <button type="button" class="submit btn-mrgn">Sign In</button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <form th:action="@{/authenticateTheUser}"
+                    method="POST" class="form-horizontal">
+<!--                    <form action="/login"-->
+<!--                        method="POST" class="form-horizontal">-->
+
+                        <!-- Place for messages: error, alert etc ... -->
+                        <div class="form-group">
+                            <div class="col-xs-15">
+                                <div>
+
+                                    <!-- Check for login error -->
+
+                                    <div th:if="${param.error}">
+
+                                        <div class="alert alert-danger col-xs-offset-1 col-xs-10">
+                                            Invalid username and password.
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Check for logout -->
+
+                                    <div th:if="${param.logout}">
+
+                                        <div class="alert alert-success col-xs-offset-1 col-xs-10">
+                                            You have been logged out.
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="up">
+                            <!-- User name -->
+                            <div style="margin-bottom: 25px" class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+                                <input type="text" name="username" placeholder="username" class="form-control">
+                            </div>
+
+                            <!-- Password -->
+                            <div style="margin-bottom: 25px" class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+
+                                <input type="password" name="password" placeholder="password" class="form-control" >
+                            </div>
+                        </div>
+
+                        <!-- Login/Submit Button -->
+                        <div style="margin-top: 10px" class="form-group">
+                            <div class="col-sm-6 controls">
+                                <button type="submit" id="submitt" class="btn btn-success">Login</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="sub-cont">
+                    <div class="img">
+                        <div class="img__text m--up">
+
+                            <h3>Don't have an account? Please Sign up!<h3>
+                        </div>
+                        <div class="img__text m--in">
+
+                            <h3>If you already has an account, just sign in.<h3>
+                        </div>
+                        <div class="img__btn">
+                            <span class="m--up">Sign Up</span>
+                            <span class="m--in">Sign In</span>
+                        </div>
+                    </div>
+                    <div class="form sign-up">
+                        <h2>Create your Account</h2>
+<!--                        <div  class="d-flex flex-column login-2">-->
+<!--                            <div>-->
+<!--                                <label>-->
+<!--                                    <span>Name</span>-->
+<!--                                    <input type="text" />-->
+<!--                                </label>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <label>-->
+<!--                                    <span>"ROLE_USER" or "ROLE_ADMIN"</span>-->
+<!--                                    <input type="text" />-->
+<!--                                </label>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <label>-->
+<!--                                    <span>Password</span>-->
+<!--                                    <input type="password" />-->
+<!--                                </label>-->
+<!--                            </div>-->
+<!--                           <div>-->
+<!--                               <button type="button" class="submit" th:action="@{/authenticateTheUser}"-->
+<!--                                       method="POST">Sign Up</button>-->
+<!--                           </div>-->
+<!--                        </div>-->
+                        <form  class="form-horizontal">
+
+                            <div class="urp">
+                                <!-- User name -->
+                                <div style="margin-bottom: 25px" class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+                                    <input  type="text" name="username" placeholder="username" class="form-control">
+                                </div>
+
+                                <!-- Role -->
+<!--                                <div style="margin-bottom: 25px" class="input-group">-->
+<!--                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>-->
+
+<!--                                    <input type="text" name="ROLE_ADMIN OR ROLE_USER" placeholder="authority"  class="form-control">-->
+<!--                                </div>-->
+
+                                <!-- Password -->
+                                <div style="margin-bottom: 25px" class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+
+                                    <input   type="password" name="password" placeholder="password" class="form-control" >
+                                </div>
+                            </div>
+
+                            <!-- Signin/Submit Button -->
+                            <div style="margin-top: 10px" class="form-group">
+                                <div class="col-sm-6 controls">
+                                    <button type="submit" id="submitt2" class="btn btn-success">Signup</button>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                    document.querySelector('.img__btn').addEventListener('click', function() {
+                        document.querySelector('.cont').classList.toggle('s--signup');
+                    });
+            </script>
+        </div>
+    </body>
+
+</html>

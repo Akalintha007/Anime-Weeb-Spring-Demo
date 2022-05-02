@@ -1,0 +1,479 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+#grad {
+       background-image: linear-gradient(to bottom right, #17202A,#283747,#17202A);
+     }
+
+.head-title-container{
+     position:fixed;
+     padding-top:30px;
+     padding-bottom:20px;
+}
+.head-title{
+     height:84px;
+}
+
+.image-holder{
+      width:222px;
+      height:294px;
+
+
+}
+.image-holder2{
+      width:290px;
+      height:400px;
+      border-radius:16px;
+
+}
+.desc{
+    width:60vw;
+}
+.more-link {
+     color: #F2F4F4;
+     font-family: "Roboto";
+     font-size: 16px;
+     font-weight: 500;
+}
+.card-title {
+    color: #F2F4F4;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 24px;
+}
+
+.anime-card {
+    border-radius: 16px;
+    margin-left:1px;
+
+
+}
+
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Style the links inside the sidenav */
+#mySidenav a {
+  position: fixed; /* Position them relative to the browser window */
+  left: -110px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 15px; /* 15px padding */
+    border-style:solid;
+    border-width:2px;
+    border-color:white;
+  width: 200px; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 25px; /* Increase font size */
+  font-weight:700
+  font-family:"Roboto";
+  color: white; /* White text color */
+  border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+
+}
+
+#mySidenav a:hover {
+  left: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#about {
+  top: 160px;
+  background-color: #17202A  ;
+}
+
+#blog {
+  top: 260px;
+  background-color: #17202A; /* Blue */
+}
+
+#projects {
+  top: 360px;
+  background-color: #17202A; /* Red */
+}
+
+#contact {
+  top: 460px;
+  background-color: #17202A;/* Light Black */
+}
+#w-list {
+  top: 560px;
+  background-color: #17202A;/* Light Black */
+}
+#logout {
+  top: 760px;
+  background-color: #17202A; /* Light Black */
+}
+
+.main-con{
+     background-image: linear-gradient(to bottom right, #17202A,#283747,#17202A);
+}
+.add-con{
+     height:100vh;
+     background-image: linear-gradient(to bottom right, #17202A,#283747,#17202A);
+}
+.rating{
+    color: #F4D03F;
+    font-family: "Roboto";
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: 15px;
+
+}
+.desc{
+    padding-left:20px;
+}
+.description{
+    margin-top:10px;
+    color: #F2F4F4;
+    font-family: "Roboto";
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+.add-form{
+    margin-left:750px;
+    padding-top:300px;
+
+}
+.btn-save{
+    margin-left:115px;
+}
+
+#updt{
+    margin-right:10px;
+    margin-left:810px;
+    border-color:#F4D03F ;
+    background-color:#17202A ;
+        margin-top:90px;
+        color:white;
+}
+#dlt{
+    background-color:#17202A ;
+        margin-top:90px;
+        color:white;
+        margin-right:10px;
+
+}
+#addToWatchList{
+    background-color:#17202A ;
+        margin-top:90px;
+        color:white;
+
+}
+#removeFromWatchList{
+    background-color:#17202A ;
+    margin-top:70px;
+    color:white;
+     margin-left:940px;
+
+}
+
+.access-denied{
+    width:600px;
+    height:350px;
+    border-radius:16px;
+    color:black;
+    background-color:#F4D03F;
+    padding:35px;
+    text-align: center;
+
+}
+.h11{
+    margin-top:20px;
+    font-family: "Roboto";
+    font-size: 45px;
+    font-weight:700;
+}
+.p1{
+    margin-top:15px;
+    font-family: "Roboto";
+    font-size: 30px;
+    font-weight:500;
+}
+
+.main-con2{
+     padding-top:120px;
+      height:100vh;
+      background-image: linear-gradient(to bottom right, #17202A,#283747,#17202A);
+
+}
+.msg{
+
+    padding-top:150px;
+    padding-left:680px;
+}
+
+.genre-box{
+
+    color:white;
+    background-color:#17202A;
+    padding:12px;
+    margin:5px;
+    font-family:"Roboto";
+    font-size:15px;
+    font-weight:500;
+    border-radius:16px;
+}
+
+
+
+.genre-head{
+    color:white;
+    margin:10px;
+    font-family:"Roboto";
+    font-weight:500;
+    font-size:20px;
+
+}
+.details{
+    border-radius:16px;
+    border-style:solid;
+    border-width:2px;
+    border-color:white;
+    padding:20px;
+    margin-top:20 px;
+}
+.other-details{
+
+    width:380px;
+
+}
+
+.rating2{
+    color: white;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 15px;
+
+}
+.values{
+    color: white;
+    font-family: "Roboto";
+    font-size: 17px;
+    font-weight: 400;
+    margin-top: 15px;
+    padding-left:10px;
+
+}
+.card-title2 {
+    color: white ;
+    font-family: "Roboto";
+    font-size: 27px;
+    font-weight: 500;
+    margin-top: 24px;
+}
+
+.spcll-btnn{
+    top:800px;
+    position:fixed;
+    margin-left:12px;
+    color:white;
+    background-color:#17202A;
+    border-radius:16px;
+    border-style:none;
+    font-family:"Roboto";
+    font-size:27px;
+
+
+}
+#con{
+    width:100px;
+    height:40px;
+    background-color:#17202A;
+}
+
+.icons-logout{
+    margin-left:33px;
+}
+.icons-home{
+    margin-left:45px;
+}
+.icons-add{
+    margin-left:70px;
+}
+.icons-list{
+    margin-left:45px;
+}
+.icons-update{
+    margin-left:35px;
+}
+.icons-delete{
+    margin-left:45px;
+}
+.h111{
+    margin-top:20px;
+    font-family: "Roboto";
+    font-size: 100px;
+    font-weight:700;
+}
+.p11{
+    margin-top:15px;
+    font-family: "Roboto";
+    font-size: 30px;
+    font-weight:500;
+}
+
+.h1111{
+    color:white;
+
+    font-family: "Roboto";
+    font-size: 48px;
+    font-weight:500;
+
+}
+.user-admin{
+    background-color:#17202A;
+    border-style:solid;
+    border-color:white;
+    border-width:2px;
+    padding:20px;
+    width:340px;
+    height:140px;
+    border-radius:16px;
+    margin:20px;
+    padding-top:30px;
+
+}
+.panel-con{
+    padding:30px;
+
+    margin-left:550px;
+}
+.icon-admin{
+    margin-right:10px;
+    margin-left:55px;
+}
+.icon-user{
+    margin-right:10px;
+    margin-left:70px;
+}
+
+.user-admin2{
+    padding:20px;
+    margin:20px;
+    padding-top:30px;
+    color:white;
+    font-family:"Roboto";
+    font-size:48px;
+
+}
+.panel-con2{
+
+    margin-top:70px;
+    margin-left:840px;
+}
+.label{
+    font-family:"Roboto";
+    font-size;20px;
+    color:white;
+    margin-left:20px;
+
+}
+.input-field{
+   background-color:#17202A;
+   border-style:solid;
+   border-color:white;
+   border-width:2px;
+   padding-left:10px;
+   width:340px;
+   height:40px;
+   border-radius:16px;
+   margin-bottom:20px;
+   padding:20px;
+   color:white;
+   text-align:center;
+   font-family:"Roboto"
+   font-size:35px;
+}
+.save-button{
+
+   background-color:#17202A;
+   border-style:solid;
+   border-color:white;
+   border-width:2px;
+   border-radius:16px;
+   color:white;
+   font-family:"Roboto"
+   padding:20px;
+   height:60px;
+}
+.cont-updt{
+    padding-top:150px;
+    padding-left:750px;
+}
+.img-hold{
+    width:720px;
+    height:450px;
+    border-radius:16px;
+    margin-top:15px;
+    margin-left:585px;
+}
+.head-c{
+    padding-top:190px;
+    font-family:"Roboto"
+    font-size:25px;
+    font-weight:300;
+    color:white;
+    text-align:center;
+}
+.input-field-2{
+   background-color:#17202A;
+   border-style:solid;
+   border-color:white;
+   border-width:2px;
+   padding-left:10px;
+   width:900px;
+   height:40px;
+   border-radius:16px;
+   margin-bottom:20px;
+   padding:35px;
+   color:white;
+   text-align:center;
+   font-family:"Roboto"
+   font-size:35px;
+}
+
+#cc-hold{
+    margin-top:100px;
+    text-align:center;
+    margin-left:320px;
+}
+.head-c-2{
+    font-family:"Roboto";
+    font-size:30px;
+    font-weight:400;
+    color:white;
+    margin-left:170px;
+}
+.cc-hold{
+     margin-top:100px;
+     text-align:center;
+     margin-left:255px;
+ }
+ #error-1{
+    margin-left:340px;
+    background-color:#17202A;
+    color:red;
+    text-align:center;
+    background-color:#17202A;
+       border-style:solid;
+       border-color:red;
+       border-width:2px;
+
+ }
+#addToWatchList2{
+    background-color:#17202A ;
+        margin-top:90px;
+        color:white;
+        margin-left:980px;
+
+}
