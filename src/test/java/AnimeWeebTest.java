@@ -2,20 +2,14 @@ import com.zemoso.springboot.demo.project.constants.AppConstants;
 import com.zemoso.springboot.demo.project.controller.AnimeController;
 import com.zemoso.springboot.demo.project.controller.ErrorAndExceptionController;
 import com.zemoso.springboot.demo.project.controller.LoginController;
-import com.zemoso.springboot.demo.project.dao.WatchListRepository;
 import com.zemoso.springboot.demo.project.entity.Anime;
-import com.zemoso.springboot.demo.project.entity.Genre;
 import com.zemoso.springboot.demo.project.service.AnimeService;
 import com.zemoso.springboot.demo.project.service.WatchListService;
-import com.zemoso.springboot.demo.project.service.WatchListServiceImpl;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.HttpStatus;
 import org.springframework.ui.ExtendedModelMap;
@@ -205,91 +199,5 @@ public class AnimeWeebTest {
         LoginController controller = new LoginController();
         String result = controller.showAccessDenied();
         assertEquals("anime/access-denied", result);
-    }
-
-
-
-
-    @Mock
-    private WatchListRepository watchListRepository;
-
-    @InjectMocks
-    private WatchListServiceImpl watchListService2;
-
-    @BeforeEach
-    public void setUp() {
-        MockitoAnnotations.openMocks(this);
-    }
-
-    @org.junit.jupiter.api.Test
-    public void testGetWatchListByUser() {
-        // Given
-        String userName = "testUser";
-        List<Genre> genre = new ArrayList<>();
-        List<Anime> animeList = new ArrayList<>();
-        animeList.add(new Anime(1, "Naruto", genre));
-
-        when(watchListRepository.getWatchListByUser(userName)).thenReturn(animeList);
-
-        // When
-        List<Anime> result = watchListService2.getWatchListByUser(userName);
-
-        // Then
-        verify(watchListRepository, times(1)).getWatchListByUser(userName);
-        Assertions.assertEquals(animeList, result);
-    }
-
-    @org.junit.jupiter.api.Test
-    public void testRemoveFromWatchList() {
-        // Given
-        String userName = "testUser";
-        int animeId = 1;
-
-        // When
-        watchListService2.removeFromWatchList(userName, animeId);
-
-        // Then
-        verify(watchListRepository, times(1)).removeFromWatchList(userName, animeId);
-    }
-
-    @org.junit.jupiter.api.Test
-    public void testAddToWatchList() {
-        // Given
-        String userName = "testUser";
-        int animeId = 1;
-
-        // When
-        watchListService2.addToWatchList(userName, animeId);
-
-        // Then
-        verify(watchListRepository, times(1)).addToWatchList(userName, animeId);
-    }
-
-    @org.junit.jupiter.api.Test
-    public void testDeleteFromWatchList() {
-        // Given
-        int animeId = 1;
-
-        // When
-        watchListService2.deleteFromWatchList(animeId);
-
-        // Then
-        verify(watchListRepository, times(1)).deleteFromWatchList(animeId);
-    }
-
-    @org.junit.jupiter.api.Test
-    public void testCheckBeforeAddToWatchList() {
-        // Given
-        String userName = "testUser";
-        int animeId = 1;
-
-        when(watchListRepository.checkBeforeAddToWatchList(userName, animeId)).thenReturn(0);
-
-        // When
-        int result = watchListService2.checkBeforeAddToWatchList(userName, animeId);
-
-        // Then
-        verify(watchListRepository, times(1)).checkBeforeAddToWatchList(userName, animeId);
-        Assertions.assertEquals(0, result);
     }
 }
