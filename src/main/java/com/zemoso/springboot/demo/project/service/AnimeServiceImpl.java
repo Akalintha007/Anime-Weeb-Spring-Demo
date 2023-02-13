@@ -9,6 +9,7 @@ import com.zemoso.springboot.demo.project.entity.Anime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 
 
 @Service
@@ -37,7 +38,7 @@ public class AnimeServiceImpl implements AnimeService {
         }
         else {
             // we didn't find the anime
-            throw new RuntimeException("Did not find anime id - " + theId);
+            throw new EntityNotFoundException("Did not find anime id - " + theId);
         }
 
         return theAnime;
@@ -59,6 +60,9 @@ public class AnimeServiceImpl implements AnimeService {
     }
 
 }
+
+
+
 
 
 

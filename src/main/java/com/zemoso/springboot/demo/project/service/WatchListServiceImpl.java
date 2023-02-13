@@ -19,32 +19,11 @@ public class WatchListServiceImpl implements WatchListService{
     public WatchListServiceImpl(WatchListRepository theWatchListRepository) {
         watchListRepository = theWatchListRepository;
     }
-//    @Override
-//    public List<Anime> getWatchListByUser(String userName) {
-//        List<Anime> result = watchListRepository.getWatchListByUser(userName);
-//
-//        Anime theAnime = null;
-//
-//        if (result.isEmpty()) {
-//
-//            // we didn't find the anime
-//            throw new RuntimeException("Did not find anime fro user name - " + userName);
-//
-//        }
-//        else {
-//            theAnime = result.get(7);
-//        }
-//
-//        return theAnime;
-//    }
-
 
     @Override
     public List<Anime> getWatchListByUser(String userName) {
-        List<Anime> result = watchListRepository.getWatchListByUser(userName);
 
-
-        return result;
+        return watchListRepository.getWatchListByUser(userName);
     }
 
     @Override
@@ -72,9 +51,6 @@ public class WatchListServiceImpl implements WatchListService{
     @Override
     public int checkBeforeAddToWatchList(String userName, int theId) {
 
-
-        int check = watchListRepository.checkBeforeAddToWatchList(userName,theId);
-
-        return check;
+        return watchListRepository.checkBeforeAddToWatchList(userName,theId);
     }
 }

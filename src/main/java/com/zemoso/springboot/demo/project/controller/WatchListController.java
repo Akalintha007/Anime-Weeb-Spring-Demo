@@ -20,24 +20,11 @@ public class WatchListController {
 
     private WatchListService watchListService;
 
-
-
-
     @Autowired
     public WatchListController(WatchListService theWatchListService) {
         watchListService = theWatchListService;
     }
 
-    @GetMapping("/hello")
-    public String hello(@CurrentSecurityContext(expression="authentication?.name")
-                        String username) {
-        //Users theUser = userService.findByUserame(username);
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println(auth);
-
-        return "Hello, " + username + "!";
-
-    }
 
     @GetMapping("/anime-weeb/admin/watch-list")
     public String showWatchList(Model theModel2, @CurrentSecurityContext(expression="authentication?.name") String username) {
@@ -45,9 +32,6 @@ public class WatchListController {
         List<Anime> theAnime2 = watchListService.getWatchListByUser(username);
         // add to the spring model
         theModel2.addAttribute("watchList", theAnime2);
-//        System.out.println("\n watch list \n");
-//        System.out.println(theAnime2);
-//        System.out.println("\n");
         return "anime/watch-list";
     }
 
@@ -82,9 +66,6 @@ public class WatchListController {
         List<Anime> theAnime2 = watchListService.getWatchListByUser(username);
         // add to the spring model
         theModel2.addAttribute("watchList", theAnime2);
-//        System.out.println("\n watch list \n");
-//        System.out.println(theAnime2);
-//        System.out.println("\n");
         return "anime/watch-list-user";
     }
 

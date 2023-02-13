@@ -1,5 +1,7 @@
 package com.zemoso.springboot.demo.project.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
@@ -56,6 +58,10 @@ public class Anime {
 
 
     public Anime() {
+    }
+
+    public Anime(String animeName) {
+        this.animeName = animeName;
     }
 
     public String getAnimeName() {
@@ -121,14 +127,6 @@ public class Anime {
     public void setId(int id) {
         this.id = id;
     }
-
-//    public String getName() {
-//        return animeName;
-//    }
-//
-//    public void setName(String name) {
-//        this.animeName = animeName;
-//    }
 
     public Double getRating() {
         return rating;

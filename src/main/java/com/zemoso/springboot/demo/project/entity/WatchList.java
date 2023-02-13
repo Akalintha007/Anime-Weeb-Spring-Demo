@@ -29,15 +29,6 @@ public class WatchList {
         this.anime = anime;
     }
 
-
-//    public List<Anime getAnime() {
-//        return anime;
-//    }
-//
-//    public void setAnime(List<Anime> anime) {
-//        this.anime = anime;
-//    }
-
     public WatchList() {
     }
 

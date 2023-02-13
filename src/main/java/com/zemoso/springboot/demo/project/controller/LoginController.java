@@ -13,15 +13,6 @@ public class LoginController {
 
     }
 
-//    @GetMapping("/logout")
-//    public String showMyLogoutPage() {
-//
-//        return "anime/login";
-//
-//    }
-
-    // add request mapping for /access-denied
-
     @GetMapping("/access-denied")
     public String showAccessDenied() {
 

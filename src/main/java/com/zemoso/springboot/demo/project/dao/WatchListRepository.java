@@ -31,8 +31,6 @@ public interface WatchListRepository extends CrudRepository<Anime, Integer> {
     @Query(value="insert into watch_list (username, anime_watch_list_id)values(:userName , :theId)",nativeQuery = true)
     public void addToWatchList(String userName, int theId);
 
-//    @Modifying
-//    @Transactional
     @Query(value="SELECT count(*) FROM watch_list WHERE username = :userName and anime_watch_list_id =:theId",nativeQuery = true)
     public int checkBeforeAddToWatchList(String userName, int theId);
 

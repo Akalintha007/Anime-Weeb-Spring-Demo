@@ -1,6 +1,7 @@
 package com.zemoso.springboot.demo.project.controller;
 
 
+import com.zemoso.springboot.demo.project.constants.AppConstants;
 import com.zemoso.springboot.demo.project.entity.Anime;
 
 import com.zemoso.springboot.demo.project.service.AnimeService;
@@ -44,14 +45,6 @@ public class AnimeController {
         System.out.println("in anime list");
         return "anime/list-anime";
     }
-
-    @GetMapping("/admin/admin-user")
-    public String userAdmin() {
-
-        return "anime/admin-user";
-    }
-
-
 
     @GetMapping("/user/anime-list")
     public String userView(Model theModel2) {
@@ -115,7 +108,7 @@ public class AnimeController {
         }
 
         animeService.save(theAnime);
-        return "redirect:/anime-weeb/admin/anime-list";
+        return AppConstants.RedirectPathAnimePage;
     }
 
     @PostMapping("/admin/save-a")
@@ -125,42 +118,18 @@ public class AnimeController {
         }
 
         animeService.save(theAnime);
-        return "redirect:/anime-weeb/admin/anime-list";
+        return AppConstants.RedirectPathAnimePage;
     }
 
-//    @GetMapping("/admin/delete")
-//    public String delete(@RequestParam("animeId") int theId) {
-//
-//
-//        animeService.deleteById(theId);
-//        return "redirect:/anime-weeb/admin/anime-list";
-//
-//    }
 
     @GetMapping("/admin/delete")
     public String delete(@RequestParam("animeId") int theId, @RequestParam("watchListId") int watchListId) {
 
         watchListService.deleteFromWatchList(watchListId);
         animeService.deleteAnimeById(theId);
-        return "redirect:/anime-weeb/admin/anime-list";
+        return AppConstants.RedirectPathAnimePage;
 
     }
-
-
-    @GetMapping("/admin/kill-code")
-    public String noFunctionalityPage() {
-
-        return "anime/page-under-construction";
-    }
-
-    @GetMapping("/admin/kill-code-g")
-    public String noFunctionalityPage2() {
-
-        return "anime/page-under-construction-2";
-    }
-
-
-
 
 
 }

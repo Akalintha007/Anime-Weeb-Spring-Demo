@@ -18,7 +18,6 @@ public class ErrorAndExceptionController implements ErrorController {
 
 
     //    It handles all the exceptions
-
     @ExceptionHandler
     public String handleException(Exception exception,Model model){
 
@@ -45,6 +44,7 @@ public class ErrorAndExceptionController implements ErrorController {
         }
         return "error";
     }
+
 
 
 }
