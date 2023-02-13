@@ -17,6 +17,14 @@
 		<java.version>11</java.version>
 		<sonar.organization>zemoso-akalintha007</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.coverage.exclusions>
+			src/main/java/com/zemoso/springboot/demo/project/constants/**,
+			src/main/java/com/zemoso/springboot/demo/project/entity/**,
+			src/main/java/com/zemoso/springboot/demo/project/config/**,
+			src/main/java/com/zemoso/springboot/demo/project/ThymeleafDemoApplication.java,
+			src/main/java/com/zemoso/springboot/demo/project/security/**,
+			src/main/java/com/zemoso/springboot/demo/project/controller/WatchListController.java,
+		</sonar.coverage.exclusions>
 	</properties>
 	<dependencies>
 		<dependency>
