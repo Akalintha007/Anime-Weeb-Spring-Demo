@@ -2,14 +2,14 @@ import com.zemoso.springboot.demo.project.dao.WatchListRepository;
 import com.zemoso.springboot.demo.project.entity.Anime;
 import com.zemoso.springboot.demo.project.entity.Genre;
 import com.zemoso.springboot.demo.project.service.WatchListServiceImpl;
+
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
-
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -22,7 +22,7 @@ public class WatchListServiceImplTest {
     private WatchListRepository watchListRepository;
 
     @InjectMocks
-    private WatchListServiceImpl watchListService;
+    private WatchListServiceImpl watchlistservice2;
 
     @BeforeEach
     public void setUp() {
@@ -40,7 +40,7 @@ public class WatchListServiceImplTest {
         when(watchListRepository.getWatchListByUser(userName)).thenReturn(animeList);
 
         // When
-        List<Anime> result = watchListService.getWatchListByUser(userName);
+        List<Anime> result = watchlistservice2.getWatchListByUser(userName);
 
         // Then
         verify(watchListRepository, times(1)).getWatchListByUser(userName);
@@ -54,7 +54,7 @@ public class WatchListServiceImplTest {
         int animeId = 1;
 
         // When
-        watchListService.removeFromWatchList(userName, animeId);
+        watchlistservice2.removeFromWatchList(userName, animeId);
 
         // Then
         verify(watchListRepository, times(1)).removeFromWatchList(userName, animeId);
@@ -67,7 +67,7 @@ public class WatchListServiceImplTest {
         int animeId = 1;
 
         // When
-        watchListService.addToWatchList(userName, animeId);
+        watchlistservice2.addToWatchList(userName, animeId);
 
         // Then
         verify(watchListRepository, times(1)).addToWatchList(userName, animeId);
@@ -79,7 +79,7 @@ public class WatchListServiceImplTest {
         int animeId = 1;
 
         // When
-        watchListService.deleteFromWatchList(animeId);
+        watchlistservice2.deleteFromWatchList(animeId);
 
         // Then
         verify(watchListRepository, times(1)).deleteFromWatchList(animeId);
@@ -94,7 +94,7 @@ public class WatchListServiceImplTest {
         when(watchListRepository.checkBeforeAddToWatchList(userName, animeId)).thenReturn(0);
 
         // When
-        int result = watchListService.checkBeforeAddToWatchList(userName, animeId);
+        int result = watchlistservice2.checkBeforeAddToWatchList(userName, animeId);
 
         // Then
         verify(watchListRepository, times(1)).checkBeforeAddToWatchList(userName, animeId);
