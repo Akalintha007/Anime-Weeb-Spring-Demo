@@ -1,6 +1,3 @@
-package com.zemoso.springboot.demo.project;
-
-
 import com.zemoso.springboot.demo.project.dao.WatchListRepository;
 import com.zemoso.springboot.demo.project.entity.Anime;
 import com.zemoso.springboot.demo.project.entity.Genre;
