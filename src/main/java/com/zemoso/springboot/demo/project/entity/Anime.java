@@ -64,6 +64,12 @@ public class Anime {
         this.animeName = animeName;
     }
 
+    public Anime(int id, String animeName, List<Genre> genres) {
+        this.id = id;
+        this.animeName = animeName;
+        this.genres = genres;
+    }
+
     public String getAnimeName() {
         return animeName;
     }

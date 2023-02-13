@@ -1,3 +1,5 @@
+package com.zemoso.springboot.demo.project;
+
 import com.zemoso.springboot.demo.project.constants.AppConstants;
 import com.zemoso.springboot.demo.project.controller.AnimeController;
 import com.zemoso.springboot.demo.project.controller.ErrorAndExceptionController;
