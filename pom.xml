@@ -24,6 +24,7 @@
 			src/main/java/com/zemoso/springboot/demo/project/ThymeleafDemoApplication.java,
 			src/main/java/com/zemoso/springboot/demo/project/security/**,
 			src/main/java/com/zemoso/springboot/demo/project/controller/WatchListController.java,
+			src/main/java/com/zemoso/springboot/demo/project/service/AnimeServiceImpl.java,
 		</sonar.coverage.exclusions>
 	</properties>
 	<dependencies>
