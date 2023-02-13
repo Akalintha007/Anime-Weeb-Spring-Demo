@@ -12,13 +12,16 @@ import com.zemoso.springboot.demo.project.entity.Genre;
 import com.zemoso.springboot.demo.project.service.AnimeServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import com.zemoso.springboot.demo.project.dao.AnimeRepository;
 import com.zemoso.springboot.demo.project.entity.Anime;
+import org.mockito.junit.MockitoJUnitRunner;
 
+@RunWith (MockitoJUnitRunner.class)
 public class AnimeServiceImplTest {
 
     @Mock
